@@ -3,14 +3,28 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
+import { Admindash } from './admindash/admindash';
+import {  HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { Appointment } from './appointment/appointment';
+import { CreateAppointment } from './create-appointment/create-appointment';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
-    App
+   
+    App,
+    Admindash,
+    Appointment,
+    CreateAppointment
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    CommonModule,
+    FormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

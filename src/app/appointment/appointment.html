@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+  <a class="navbar-brand text-white" href="#">SIDDHINATH HOSPITALS</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link active text-white" routerLink="/admin">Back</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active text-white" routerLink="/create-appointment">Create Appointment</a>
+      </li>
+    </ul>
+    <div class="mx-2">
+      <button class="btn btn-danger" style="margin: 5px;">
+        <a class="text-white" href="javascript:void(0);">Logout</a>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <hr>
+  <h2 class="text-center mt-4">Admin Dashboard</h2>
+  <p style="color: rgb(86, 86, 86); font-size: large;">
+    <marquee behavior="scroll" direction="left">
+      Welcome to Admin Dashboard. Please find the patient Appointments below!! Click Appointments to view and update Appointments. Click Add Appointment to add new Appointment.
+    </marquee>
+  </p>
+  <hr>
+
+  <input type="text" name="search" placeholder="Search" class="form-control mb-3"> 
+
+  <h4 class="text-muted">Current Patient List in the Queue</h4>
+
+  <div class="tableFixHead">
+    <table class="table table-striped">
+      <thead class="table-header">
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Symptoms</th>
+          <th>Number</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let appointment of appointments">
+          <td>{{ appointment.id }}</td>
+          <td>{{ appointment.name }}</td>
+          <td>{{ appointment.age }}</td>
+          <td>{{ appointment.symptoms }}</td>
+          <td>{{ appointment.number }}</td>
+          <td>
+            <button class="btn btn-danger" >Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
