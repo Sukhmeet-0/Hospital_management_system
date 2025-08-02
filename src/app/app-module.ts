@@ -9,6 +9,8 @@ import { CommonModule } from '@angular/common';
 import { Appointment } from './appointment/appointment';
 import { CreateAppointment } from './create-appointment/create-appointment';
 import { FormsModule } from '@angular/forms';
+import { CreatePatient } from './create-patient/create-patient';
+import { Home } from './home/home';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { FormsModule } from '@angular/forms';
     App,
     Admindash,
     Appointment,
-    CreateAppointment
+    CreateAppointment,
+    CreatePatient,
+    Home
   ],
   imports: [
     BrowserModule,

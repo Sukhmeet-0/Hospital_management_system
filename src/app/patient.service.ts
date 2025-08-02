@@ -12,4 +12,10 @@ export class PatientService{
     getPatientList():Observable<Patient[]>{
         return this.HttpClient.get<Patient[]>(`${this.baseUrl}`);
     }
+    createPatient(patient:Patient):Observable<Patient>{
+       return this.HttpClient.post<Patient>(`${this.baseUrl}`,patient);
+    }
+    deletePatient(id:number):Observable<object>{
+        return this.HttpClient.delete(`${this.baseUrl}/patients/${id}`);
+    }
 }

@@ -54,7 +54,7 @@
           <td>{{ appointment.symptoms }}</td>
           <td>{{ appointment.number }}</td>
           <td>
-            <button class="btn btn-danger" >Delete</button>
+            <button class="btn btn-danger" (click)="delete(appointment.id)" >Delete</button>
           </td>
         </tr>
       </tbody>

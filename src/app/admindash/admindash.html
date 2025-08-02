@@ -14,6 +14,10 @@
             <a style="color: white;"class="nav-link active" aria-current="page" href="javascript:void(0);" [routerLink]="['/appointmentlist']" routerLinkActive="router-link-active" >Appointments</a>
           </li>
 
+           <li class="nav-item">
+            <a style="color: white;"class="nav-link active" aria-current="page" href="javascript:void(0);" [routerLink]="['/create-patient']" routerLinkActive="router-link-active" >Add Patient</a>
+          </li>
+
         
         
       </ul>
@@ -49,7 +53,7 @@
         
         
         <th>Fees</th>
-        <th>Urgency</th>
+       
         <th>Action</th>
       </tr>
     </thead>
@@ -62,10 +66,10 @@
         
         
         <td>{{patient.fees}}</td>
-        <td>{{patient.urgency}}</td>
+        
         <td>
           
-          <button class="btn btn-danger" style="margin-left: 10px;">Delete</button> 
+          <button class="btn btn-danger" style="margin-left: 10px;"(click) ="delete(patient.id)" >Delete</button> 
         </td>
       </tr>
     </tbody>
