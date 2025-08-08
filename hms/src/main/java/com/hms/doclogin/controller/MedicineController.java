@@ -2,6 +2,7 @@ package com.hms.doclogin.controller;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,6 +14,7 @@ import com.hms.doclogin.repository.MedicineRepository;
 
 @RestController
 @RequestMapping("/api/v3")
+@CrossOrigin("http://localhost:4200")
 public class MedicineController {
     private MedicineRepository medicineRepository;
 
