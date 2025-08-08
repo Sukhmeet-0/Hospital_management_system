@@ -22,10 +22,13 @@ export class CreatePatient {
 
   onSubmit(){
     this.saveAppointment();
-    this.goToAdmin();
+    this.goToDoc();
   }
   goToAdmin(){
     this.router.navigate(['/admin'],{ queryParams: { refresh: new Date().getTime() } });
+  }
+  goToDoc(){
+    this.router.navigate(['/docdash'],{ queryParams: { refresh: new Date().getTime() } });
   }
 
 }

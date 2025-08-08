@@ -11,6 +11,9 @@ import { CreateAppointment } from './create-appointment/create-appointment';
 import { FormsModule } from '@angular/forms';
 import { CreatePatient } from './create-patient/create-patient';
 import { Home } from './home/home';
+import { Docdash } from './docdash/docdash';
+import { MedicineList } from './medicine-list/medicine-list';
+import { CreateMedicine } from './create-medicine/create-medicine';
 
 
 @NgModule({
@@ -21,7 +24,10 @@ import { Home } from './home/home';
     Appointment,
     CreateAppointment,
     CreatePatient,
-    Home
+    Home,
+    Docdash,
+    MedicineList,
+    CreateMedicine,
   ],
   imports: [
     BrowserModule,
