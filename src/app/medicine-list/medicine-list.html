@@ -25,7 +25,7 @@
     </div>
   
   </nav>
-  <div class="container-fluid">
+  <div class="container-fluid" >
   <hr>
     <h2 style="text-align: center;margin-top: 20PX;">Medicines Dashboard</h2>
     <a style="color: rgb(86, 86, 86); font-size: x-large;"><marquee behavior="scroll" direction="left">
@@ -33,7 +33,7 @@
   <hr>
    
   <br>
-    <a style="color: rgb(86, 86, 86); font-size: xx-large;">Current Patient List in the Queue</a>
+    <a style="color: rgb(86, 86, 86); font-size: xx-large;">Current Medicine List.</a>
 <div class="tableFixHead">
   <br>
 
@@ -43,13 +43,18 @@
             <th>Id</th>
             <th>Drug Name</th>
             <th>Stock</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor=" let medicine of medicines">
+        <tr *ngFor="let medicine of medicines">
             <td>{{ medicine.id}}</td>
             <td>{{ medicine.drugName}}</td>
             <td>{{ medicine.stock}}</td>
+            <td>
+              <button class="btn btn-danger" style="margin-left: 10px;"(click) ="delete(medicine.id)" >Delete</button> 
+            </td>
         </tr>
     </tbody>
 </table>
+</div>

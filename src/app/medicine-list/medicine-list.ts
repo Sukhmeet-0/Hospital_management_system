@@ -9,18 +9,25 @@ import { MedicineService } from '../medicine.service';
   styleUrl: './medicine-list.css'
 })
 export class MedicineList {
-  medicines:Medicine[]=[]
+  medicines:Medicine[]=[];
   constructor(private medicineService:MedicineService,private cd:ChangeDetectorRef){}
 
   ngOnInit(){
     this.getMedicine();
-    this.cd.detectChanges();
+    // this.cd.detectChanges();
   }
 
   getMedicine(){
     this.medicineService.getMedicines().subscribe(data=>{
       this.medicines = data;
-      console.log(data)
+      console.log(data);
+      this.cd.detectChanges();
+    })
+  }
+  delete(id:number){
+    this.medicineService.deleteMedicine(id).subscribe(data=>{
+      console.log(data);
+      this.getMedicine();
     })
   }
 }
