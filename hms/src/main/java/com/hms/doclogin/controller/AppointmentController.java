@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.hms.doclogin.entity.Appointment;
 import com.hms.doclogin.repository.AppointmentRepository;
-import com.hms.entity.Patient;
+
 
 @RestController
 @RequestMapping("/api/v2")
