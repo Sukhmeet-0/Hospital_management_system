@@ -12,12 +12,14 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hms.doclogin.entity.Appointment;
 import com.hms.doclogin.repository.AppointmentRepository;
+import com.hms.entity.Patient;
 
 @RestController
 @RequestMapping("/api/v2")
@@ -48,6 +50,17 @@ public class AppointmentController {
         Map<String, Boolean> response = new HashMap<String,Boolean>();
         response.put("Deleted",Boolean.TRUE);
         return ResponseEntity.ok(response);
+    }
+    @PutMapping("/appointments/{id}")
+    public ResponseEntity<Appointment> updateAppointmentById(@PathVariable long id, @RequestBody Appointment appointmentDetails) throws AttributeNotFoundException{
+        Appointment appointment = appointmentRepository.findById(id).orElseThrow(()->new AttributeNotFoundException("Patient not found"));
+        appointment.setName(appointmentDetails.getName());
+        appointment.setAge(appointmentDetails.getAge());
+        appointment.setNumber(appointmentDetails.getNumber());
+        appointment.setSymptoms(appointmentDetails.getSymptoms());
+
+        Appointment savedAppointment = appointmentRepository.save(appointment);
+        return ResponseEntity.ok(savedAppointment);
     }
 
 }
