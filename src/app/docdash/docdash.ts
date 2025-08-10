@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { PatientService } from './../patient.service';
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { Patient } from '../patient';
@@ -9,7 +10,7 @@ import { Patient } from '../patient';
   styleUrl: './docdash.css'
 })
 export class Docdash {
-  constructor(private patientService:PatientService,private cd:ChangeDetectorRef){}
+  constructor(private patientService:PatientService,private cd:ChangeDetectorRef,private router:Router){}
   patients:Patient[]=[];
   ngOnInit():void{
     this.getPatient();
@@ -20,5 +21,8 @@ export class Docdash {
       this.patients= data;
       this.cd.detectChanges();
     })
+  }
+  updatePatient(id:number){
+    this.router.navigate(['update-patient',id]);
   }
 }

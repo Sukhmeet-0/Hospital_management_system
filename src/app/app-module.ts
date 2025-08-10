@@ -14,6 +14,7 @@ import { Home } from './home/home';
 import { Docdash } from './docdash/docdash';
 import { MedicineList } from './medicine-list/medicine-list';
 import { CreateMedicine } from './create-medicine/create-medicine';
+import { UpdatePatient } from './update-patient/update-patient';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { CreateMedicine } from './create-medicine/create-medicine';
     Docdash,
     MedicineList,
     CreateMedicine,
+    UpdatePatient,
   ],
   imports: [
     BrowserModule,
